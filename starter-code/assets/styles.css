@@ -1,0 +1,64 @@
+/* Colours */
+
+:root {
+  --clr-brand-400: hsl(157, 74%, 62%);
+  --clr-brand-500: hsl(157, 74%, 82%);
+
+  --clr-neutral-900: hsl(224, 35%, 11%);
+  --clr-neutral-700: hsl(225, 26%, 23%);
+  --clr-neutral-500: hsl(225, 21%, 45%);
+  --clr-neutral-300: hsl(225, 40%, 83%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
+
+  --clr-error-500: hsl(0, 96%, 61%);
+
+  --ty-wgt-300: 300;
+  --ty-wgt-700: 700;
+}
+
+body {
+  background: var(--clr-neutral-900);
+  font-family: "Chivo", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+main {
+  display: grid;
+  justify-items: center;
+}
+
+h1 {
+  text-transform: uppercase;
+  color: var(--clr-brand-400);
+  font-weight: var(--ty-wgt-300);
+
+  span {
+    color: var(--clr-neutral-100);
+  }
+}
+
+p {
+  color: var(--clr-neutral-300);
+  font-weight: var(--ty-wgt-300);
+}
+
+form {
+  display: grid;
+}
+
+ul {
+  display: flex;
+}
+
+input {
+  border-radius: 4rem;
+}
+
+button {
+  color: var(--clr-neutral-900);
+  font-weight: var(--ty-wgt-700);
+  border: 0;
+  border-radius: 4rem;
+  background: var(--clr-brand-400);
+}

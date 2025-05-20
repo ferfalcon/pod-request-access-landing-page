@@ -7,23 +7,31 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@100..900&display=swap" rel="stylesheet">
+  <link href="./assets/styles.css" rel="stylesheet">
   <title>Frontend Mentor | Pod request access landing page</title>
 </head>
 <body>
   <main>
-    <h1>Publish your podcasts everywhere.</h1>      
+    <img src="./assets/images/logo.svg" alt="pod">
+    <h1>Publish your podcasts <span>everywhere.</span></h1>
     <p>Upload your audio to Pod with a single click. We’ll then distribute your podcast to Spotify, 
     Apple Podcasts, Google Podcasts, Pocket Casts and more!</p>
     <ul>
-      <li><img src="assets/desktop/spotify.svg" alt="Spotify"></li>
-      <li><img src="assets/desktop/apple-podcast.svg" alt="Apple Podcast"></li>
-      <li><img src="assets/desktop/google-podcasts.svg" alt="Google Podcasts"></li>
-      <li><img src="assets/desktop/pocket-casts.svg" alt="Pocket Casts"></li>
+      <li><img src="./assets/images/spotify.svg" alt="Spotify"></li>
+      <li><img src="./assets/images/apple-podcast.svg" alt="Apple Podcast"></li>
+      <li><img src="./assets/images/google-podcasts.svg" alt="Google Podcasts"></li>
+      <li><img src="./assets/images/pocket-casts.svg" alt="Pocket Casts"></li>
     </ul>
     <form action="">
-      <input type="email" name="email" id="email">
+      <input type="email" name="email" id="email" placeholder="Email address">
       <button>Request access</button>
     </form>
+    <picture class="pic-comp">
+      <source media="(min-width: 56rem)" srcset="./assets/images/image-host-l.jpg">
+      <source media="(min-width: 32rem)" srcset="./assets/images/image-host-m.jpg">
+      <img class="pic-comp__image" src="./assets/images/image-host-s.jpg" alt="Image of a person">
+    </picture>
+    <img src="./assets/images/bg-pattern-dots.svg" alt=" ">
   </main>
 </body>
 </html>
