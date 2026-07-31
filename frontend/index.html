@@ -2,12 +2,137 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>frontend</title>
+    <meta
+      name="description"
+      content="Request access to Pod, the simple way to publish your podcast everywhere."
+    />
+    <title>Pod — Request access</title>
   </head>
   <body>
-    <div id="app"></div>
+    <main class="page-shell">
+      <div class="page-layout">
+        <header class="brand">
+          <img
+            class="brand__logo"
+            src="/src/assets/images/logo.svg"
+            width="135"
+            height="56"
+            alt="Pod"
+          />
+        </header>
+
+        <div class="hero" aria-hidden="true">
+          <picture class="hero__media">
+            <source
+              media="(min-width: 80rem)"
+              srcset="/src/assets/images/image-host-l.jpg"
+              width="888"
+              height="640"
+            />
+            <source
+              media="(min-width: 48rem)"
+              srcset="/src/assets/images/image-host-m.jpg"
+              width="491"
+              height="767"
+            />
+            <img
+              class="hero__image"
+              src="/src/assets/images/image-host-s.jpg"
+              width="375"
+              height="667"
+              alt=""
+            />
+          </picture>
+          <img
+            class="hero__dots"
+            src="/src/assets/images/bg-pattern-dots.svg"
+            width="232"
+            height="104"
+            alt=""
+          />
+        </div>
+
+        <section class="content-panel" aria-labelledby="page-title">
+          <div class="message">
+            <h1 id="page-title">
+              <span>Publish your podcasts</span>
+              <span>everywhere.</span>
+            </h1>
+            <p>
+              Upload your audio to Pod with a single click. We’ll then distribute your podcast
+              to Spotify, Apple Podcasts, Google Podcasts, Pocket Casts and more!
+            </p>
+          </div>
+
+          <div class="request-slot" id="request-slot">
+            <form class="request-form" id="request-form" action="" method="post">
+              <label class="visually-hidden" for="email">Email address</label>
+              <div class="request-form__controls">
+                <div class="request-form__field">
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    inputmode="email"
+                    enterkeyhint="send"
+                    placeholder="Email address"
+                    required
+                  />
+                </div>
+                <button class="request-form__submit" type="submit">
+                  <span>Request Access</span>
+                </button>
+              </div>
+              <p class="request-form__feedback" id="email-error" hidden>
+                Oops! Please check your email
+              </p>
+            </form>
+            <p
+              class="request-form__feedback visually-hidden"
+              id="request-status"
+              aria-live="polite"
+              aria-atomic="true"
+              hidden
+            ></p>
+          </div>
+
+          <div class="platforms" aria-hidden="true">
+            <img
+              class="platforms__spotify"
+              src="/src/assets/images/spotify.svg"
+              width="96"
+              height="29"
+              alt=""
+            />
+            <img
+              class="platforms__apple"
+              src="/src/assets/images/apple-podcast.svg"
+              width="78"
+              height="29"
+              alt=""
+            />
+            <img
+              class="platforms__google"
+              src="/src/assets/images/google-podcasts.svg"
+              width="125"
+              height="18"
+              alt=""
+            />
+            <img
+              class="platforms__pocket"
+              src="/src/assets/images/pocket-casts.svg"
+              width="129"
+              height="26"
+              alt=""
+            />
+          </div>
+        </section>
+      </div>
+    </main>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
