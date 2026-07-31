@@ -1,0 +1,179 @@
+.request-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  inline-size: 100%;
+}
+
+.request-form__controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  inline-size: 100%;
+}
+
+.request-form__field {
+  display: flex;
+  min-inline-size: 0;
+  min-block-size: var(--control-min-height);
+  border-radius: var(--pill-radius);
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+  background: var(--color-field);
+  box-sizing: border-box;
+}
+
+.request-form input {
+  min-inline-size: 0;
+  inline-size: 100%;
+  min-block-size: var(--control-min-height);
+  padding: 0.25rem 1.75rem;
+  border: 0;
+  border-radius: inherit;
+  outline-offset: var(--focus-offset);
+  background: transparent;
+  color: var(--color-strong);
+  font-size: 1rem;
+  font-weight: var(--font-weight-bold);
+  line-height: 2;
+}
+
+.request-form input::placeholder {
+  color: rgb(255 255 255 / 50%);
+  opacity: 1;
+}
+
+.request-form input:focus-visible,
+.request-form__submit:focus-visible,
+.request-success:focus-visible {
+  outline: var(--focus-width) solid var(--color-strong);
+  outline-offset: var(--focus-offset);
+}
+
+.request-form__submit {
+  min-inline-size: 0;
+  inline-size: 100%;
+  min-block-size: var(--control-min-height);
+  padding: 0.5rem 2rem;
+  border: 0;
+  border-radius: 1.75rem;
+  background: var(--color-accent);
+  box-shadow: var(--cta-shadow);
+  color: var(--color-page);
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-bold);
+  line-height: 2;
+  white-space: nowrap;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .request-form__submit:hover:not([aria-disabled='true']) {
+    background: var(--color-accent-hover);
+  }
+}
+
+.request-form__submit:active:not([aria-disabled='true']) {
+  box-shadow: inset 0 0 0 2px rgb(18 23 37 / 35%);
+  translate: 0 1px;
+}
+
+.request-form__submit[aria-disabled='true'] {
+  cursor: wait;
+  opacity: 0.78;
+}
+
+.request-form[data-state='validation-error'] .request-form__field {
+  outline-color: var(--color-error);
+}
+
+.request-form__feedback {
+  color: var(--color-error);
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.25;
+  text-align: center;
+}
+
+#request-status:not(.visually-hidden) {
+  margin-block-start: var(--space-2);
+}
+
+#request-status[data-kind='service-error'] {
+  color: var(--color-body);
+}
+
+.request-success {
+  min-block-size: 3.25rem;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--color-accent);
+  border-radius: var(--pill-radius);
+  box-sizing: border-box;
+  color: var(--color-strong);
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.5;
+  text-align: center;
+}
+
+@media (min-width: 48rem) {
+  .request-form__controls {
+    flex-direction: row;
+    gap: 0;
+    padding: 0.125rem;
+    border: 2px solid transparent;
+    border-radius: var(--pill-radius);
+    background: var(--color-field);
+    box-sizing: border-box;
+  }
+
+  .request-form__field {
+    flex: 1 1 auto;
+    border: 0;
+    outline-color: transparent;
+    background: transparent;
+  }
+
+  .request-form input {
+    min-block-size: var(--control-min-height);
+    padding-inline: 1.5rem;
+    font-size: 0.875rem;
+  }
+
+  .request-form__submit {
+    flex: 0 0 10.8125rem;
+    inline-size: auto;
+  }
+
+  .request-form[data-state='validation-error'] .request-form__controls {
+    border-color: var(--color-error);
+  }
+
+  .request-form[data-state='validation-error'] .request-form__field {
+    outline-color: transparent;
+  }
+
+  .request-form__feedback {
+    padding-inline: 2rem;
+    text-align: start;
+  }
+
+  #request-status:not(.visually-hidden) {
+    padding-inline: 2rem;
+  }
+}
+
+@media (forced-colors: active) {
+  .request-form__field,
+  .request-form__controls,
+  .request-success {
+    border-color: CanvasText;
+    outline-color: CanvasText;
+  }
+
+  .request-form[data-state='validation-error'] .request-form__field,
+  .request-form[data-state='validation-error'] .request-form__controls {
+    border-color: LinkText;
+    outline-color: LinkText;
+  }
+}
